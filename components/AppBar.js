@@ -3,6 +3,7 @@ import { Appbar } from 'react-native-paper';
 
 export default function TopAppBar() {
   const _goBack = () => console.log('Went back');
+  //<Appbar.BackAction onPress={_goBack} />
 
   const _handleSearch = () => console.log('Searching');
 
@@ -10,8 +11,8 @@ export default function TopAppBar() {
 
   return (
     <Appbar.Header>
-      <Appbar.BackAction onPress={_goBack} />
-      <Appbar.Content title="Title" subtitle="Subtitle" />
+      
+      <Appbar.Content title="Wednesday, March 23 | Day 3" subtitle="Caden Juang" />
       <Appbar.Action icon="magnify" onPress={_handleSearch} />
       <Appbar.Action icon="dots-vertical" onPress={_handleMore} />
     </Appbar.Header>

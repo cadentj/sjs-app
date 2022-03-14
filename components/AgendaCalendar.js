@@ -2,10 +2,12 @@ import * as React from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import { Button } from 'react-native-paper';
-
+import { DarkTheme } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 export default function AgendaCalendar() {
+
     return (
         <Agenda
             // The list of items that have to be displayed in agenda. If you want to render item as empty date
@@ -58,7 +60,7 @@ export default function AgendaCalendar() {
             renderKnob={() => {
                 return (
                     <View style={{ flex: 1 }}>
-                        <Button style={{ height: 100 }}>Hi</Button>
+                        <Icon name="chevron-down" />
                     </View>
                 );
             }}
@@ -90,10 +92,10 @@ export default function AgendaCalendar() {
             refreshControl={null}
             // Agenda theme
             theme={{
-                agendaDayTextColor: 'yellow',
-                agendaDayNumColor: 'green',
-                agendaTodayColor: 'red',
-                agendaKnobColor: 'blue'
+                ...DarkTheme,
+                selectedDayBackgroundColor: '#FF0000',
+                selectedDayTextColor: '#ffffff',
+                dotColor: '#00adf5',
             }}
             // Agenda container style
             style={{
