@@ -1,8 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Button } from 'react-native-paper';
 import BottomNav from './components/BottomNav';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import TopAppBar from './components/AppBar';
+import { NavigationContainer } from '@react-navigation/native';
 
 const theme = {
   ...DefaultTheme,
@@ -16,8 +17,12 @@ const theme = {
 
 export default function App() {
   return (
+
     <PaperProvider theme={theme}>
-      <BottomNav/>
+      <TopAppBar />
+      <NavigationContainer theme={theme}>
+        <BottomNav />
+      </NavigationContainer>
     </PaperProvider>
   );
 }

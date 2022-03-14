@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Text, View ,TouchableOpacity} from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { Calendar, CalendarList, Agenda } from 'react-native-calendars';
 import { Button } from 'react-native-paper';
-import { color } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 
 
 
@@ -57,11 +56,15 @@ export default function AgendaCalendar() {
             }}
             // Specify how agenda knob should look like
             renderKnob={() => {
-                return <View style={{ backgroundColor: "blue", flex: 0.3 }} />;
+                return (
+                    <View style={{ flex: 1 }}>
+                        <Button style={{ height: 100 }}>Hi</Button>
+                    </View>
+                );
             }}
             // Specify what should be rendered instead of ActivityIndicator
             renderEmptyData={() => {
-                return <View/>;
+                return <View />;
             }}
             // Specify your item comparison function for increased performance
             rowHasChanged={(r1, r2) => {
@@ -94,7 +97,6 @@ export default function AgendaCalendar() {
             }}
             // Agenda container style
             style={{
-                
             }}
         />
     );
